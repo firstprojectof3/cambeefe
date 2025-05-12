@@ -30,3 +30,4 @@ npm run dev
 
 ## 👥 팀원 역할
 @digurri : FE + a
+@teumYee : AI 
