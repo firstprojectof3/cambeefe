@@ -1,30 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>질문 시스템</title>
-</head>
-<body>
-  <h1>질문하세요!</h1>
-  <input type="text" id="question" placeholder="질문 입력..." />
-  <button onclick="sendQuestion()">질문 보내기</button>
-  <p id="answer"></p>
-
-  <script>
-    function sendQuestion() {
-      const question = document.getElementById('question').value;
-
-      fetch('http://localhost:3000/ask', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ question })
-      })
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('answer').innerText = data.answer;g
-      });
-    }
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cambee</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
