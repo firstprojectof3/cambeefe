@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# production build
+dist/
+
+# local env
+.env
+
+# OS
+.DS_Store
+
+# logs
+npm-debug.log*
