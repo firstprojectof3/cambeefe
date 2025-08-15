@@ -42,5 +42,23 @@ class User(Base):
     gender = Column(String)
     grade = Column(Integer)
     school = Column(String)
+    income_level = Column(Integer) # 250729 소득분위 필드 추가
+    major = Column(String)  # 250804 User 모델에 전공 추가
+    
+    
+class Notice(Base):
+    __tablename__ = "notices"
+
+    id = Column(Integer, primary_key=True, index=True)
+    category = Column(String)  # 장학, 학사, 등록금 등 카테고리 종류
+    title = Column(String)
+    content = Column(String)
+    url = Column(String)
+    date = Column(DateTime)
+    
+     # 250807 필터링용 필드 추가
+    target_grade = Column(Integer, nullable=True)    
+    target_major = Column(String, nullable=True)     
+    target_student_number = Column(Integer, nullable=True)     
 
     

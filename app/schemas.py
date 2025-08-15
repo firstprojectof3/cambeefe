@@ -8,7 +8,22 @@ class User(BaseModel):
     gender: str
     grade: int
     school: str
-    id: int  
+    income_level: int  
+    major: str #250804 전공 추가 
+    
+class UserCreate(BaseModel):
+    user_id: str
+    name: str
+    student_number: int
+    gender: str
+    grade: int
+    school: str
+    income_level: int
+    major: str
+    
+    
+    class Config:
+        orm_mode = True
 
 class Message(BaseModel):
     user_id: str
@@ -39,4 +54,4 @@ class Feedback(BaseModel):
     message_id: Optional[int] = None
     feedback_text: Optional[str] = None
     rating: Optional[int] = None
-    timestamp: Optional[str] = None  # ✅ 수정 완료
+    timestamp: Optional[str] = None  
