@@ -6,7 +6,6 @@ from routers import notice, feedback, preference
 
 from datetime import datetime 
 
-# 경로 수정 필요
 from app.services.ai.prompt.prompt_builder import build_generic_prompt
 from app.models.user_db import get_user_by_id
 from app.services.ai.ai_setting import call_openai,client
