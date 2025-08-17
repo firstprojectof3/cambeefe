@@ -1,5 +1,5 @@
-from app.models import food
-from app.models.food import fetch_menu_by_query
+from cambeefe.app.models import food
+from cambeefe.app.models.food import fetch_menu_by_query
 
 def build_food_prompt(user, message):
     menu_info = food.fetch_menu_by_query(message)
