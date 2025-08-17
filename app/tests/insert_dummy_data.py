@@ -4,11 +4,13 @@ from database import SessionLocal
 from schema_models import User, Notice
 from datetime import datetime
 
-db: Session = SessionLocal()
+def insert_test_data():
+    db: Session = SessionLocal()
 
-db.query(Notice).delete()   # 공지 먼저 지우고
-db.query(User).delete()     # 유저 지우고
-db.commit()
+    # 기존 데이터 삭제
+    db.query(Notice).delete()
+    db.query(User).delete()
+    db.commit()
 
 # 테스트 유저
 test_users = [
