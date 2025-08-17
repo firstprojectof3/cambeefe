@@ -1,7 +1,7 @@
 # 입학년도 교과과정 pdf 파싱
 # 질문 : 졸업하려면 몇 학점 들어야 해? (사용자의 남은 졸업 학점이 아닌 전공에 기반)
 
-from app.models.graduation import graduation_data
+from cambeefe.app.models.graduation import graduation_data
 from datetime import datetime
 
 
