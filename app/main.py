@@ -9,14 +9,15 @@ from datetime import datetime
 from app.services.ai.prompt.prompt_builder import build_generic_prompt
 
 # 수정 필요!
-from app.models.user_db import get_user_by_id
+#from app.models.user_db import get_user_by_id
+from.app.tests.insert_dummy_data import insert_test_data
+
 
 from app.services.ai.ai_setting import call_openai,client
 
 # env에 불러오기
 import os
 from dotenv import load_dotenv
-
 
 
 # ⬇⬇⬇ [추가] CORS 미들웨어
@@ -44,6 +45,11 @@ app.add_middleware(
 
 # api 키 호출
 openai.api_key=os.getenv("OPENAI_API_KEY")
+
+
+@app.on_event("startup")
+def startup_event():
+    insert_test_data()
 
 # 챗봇 구성
 @app.post("/chat", response_model=ChatResponse)
